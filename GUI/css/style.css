@@ -1,0 +1,24 @@
+.hun{
+    margin: 0px;
+    height: 100rem;
+}
+.rightFloat{
+    float: right;
+}
+.nav-banner{
+    position: fixed;
+    top: 0px;
+}
+a:hover{
+    color: initial; /* Takes initial value of the property which is black in this case */
+    text-decoration: none;
+}
+.white{
+color: white;
+}
+.black{
+    color: black;
+}
+.notDisplay{
+    display: none;
+}
