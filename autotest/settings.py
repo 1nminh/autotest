@@ -11,10 +11,20 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-
+import mongoengine
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+DBNAME = 'userstory'
+_MONGODB_USER = 'root'
+_MONGODB_PASSWD = ''
+_MONGODB_HOST = 'localhost'
+_MONGODB_NAME = 'userstory'
+_MONGODB_DATABASE_HOST = \
+    'mongodb://%s:%s@%s/%s' \
+    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+
+mongoengine.connect(DBNAME, host=_MONGODB_DATABASE_HOST)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
