@@ -1,19 +1,52 @@
-
-{% for userstory in UserStories %}
-{% userstory.US_Name %}
-{% userstory.US_As %}
-{% userstory.US_IWant %}
-{% userstory.US_SoThat %}
-{% userstory.US_Priority %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <form action="http:"></form>
+    <form method="post" action="http://127.0.0.1:8000/">
+        {% csrf_token %}
+        <ul>
+            <li>
+                <input type="text" name="US_Name">
+            </li>
+            <li>
+                <input type="text" name="US_As">
+            </li>
+            <li>
+                <input type="text" name="US_IWant">
+            </li>
+            <li>
+                <input type="text" name="US_SoThat">
+            </li>
+            <li>
+                <input type="text" name="US_Priority">
+            </li>
+            <li>
+                <input type="submit" value="Add UserStory">
+            </li>
+        </ul>
+    </form>
+    {% for userstory in UserStories %}
+
+    <h2> {% userstory.US_Name %}</h2>
+    <h2> {% userstory.US_As %}</h2>
+    <h2> {% userstory.US_IWant %}</h2>
+    <h2> {% userstory.US_SoThat %}</h2>
+    <h2> {% userstory.US_Priority %}</h2>
+    <!DOCTYPE html>
+    <!-- <form method="get" action="http://127.0.0.1:8000/update">
+
+        <input type="">
+
+    </form> -->
+    {%endfor%}
+
 </body>
+
 </html>

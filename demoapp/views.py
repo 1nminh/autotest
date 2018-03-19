@@ -42,3 +42,12 @@ def update(request):
         userstory.US_IWant = request.USERSTORY['US_IWant']
         userstory.US_SoThat = request.USERSTORY['US_SoThat']
         userstory.US_Priority = request.USERSTORY['US_Priority']
+        userstory.save()
+        template = 'index.html'
+        params = {'UserStories': UserStory.objects}
+    
+    elif: request.method=='GET':
+        template = 'update.html'
+        params = {'userstory': userstory}
+    
+    return render_to_response(template, params, context_instance=RequestContext(request))
