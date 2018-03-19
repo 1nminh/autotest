@@ -10,8 +10,6 @@ connect(DBNAME)
 class UserStory(Document):
     # US_ID = StringField(max_length=120, required=True)
 
-    US_ID = StringField(max_length=120, required=True)
-
     US_Name = StringField(max_length=120, required=True)
     US_As = StringField(max_length=120, required=True)
     US_IWant = StringField(max_length=120, required=True)

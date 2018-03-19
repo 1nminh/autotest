@@ -5,7 +5,7 @@ from models import UserStory, AcceptanceCriteria
 
 def index(request):
     if request.method == 'USERSTORY':
-        US_ID = request.USERSTORY['US_ID']
+        # US_IDs = request.USERSTORY['US_IDs']
 
         US_Name = request.USERSTORY['US_Name']
         US_As = request.USERSTORY['US_As']
@@ -36,3 +36,9 @@ def index(request):
 def update(request):
     id = eval("request." + request.method + "[id]")
     userstory = UserStory.objects(id=id)[0]
+    if request.method == 'USERSTORY' 
+        userstory.US_Name = request.USERSTORY['US_Name']
+        userstory.US_As = request.USERSTORY['US_As']
+        userstory.US_IWant = request.USERSTORY['US_IWant']
+        userstory.US_SoThat = request.USERSTORY['US_SoThat']
+        userstory.US_Priority = request.USERSTORY['US_Priority']
